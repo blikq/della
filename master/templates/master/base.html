@@ -56,11 +56,13 @@
                                     <li><a href="/about">About Us</a></li>
                                     <li><a href="/contact">Contact Us</a></li>
                                     {% if request.user.is_authenticated %}
-                                    <li><a href="/logout" data-toggle="modal"><i class="icon-user"></i>Logout</a>
+                                    <li><a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-user"></i>Logout</a></li>
+                                    <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                                        {% csrf_token %}
+                                    </form>
                                     {% else %}
-                                    <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a>
+                                    <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a></li>
                                     {% endif %}
-                                    </li>
                                 </ul>
                             </li>
                         </ul><!-- End .top-menu -->
@@ -99,14 +101,14 @@
                                                     <div class="menu-title">Categories</div>
                                                     <!-- End .menu-title -->
                                                     <ul>
-                                                        <li><a href="/catgory/men">MEN</a></li>
-                                                        <li><a href="/catgory/women"><span>WOMEN<span
+                                                        <li><a href="/category/men">MEN</a></li>
+                                                        <li><a href="/category/women"><span>WOMEN<span
                                                                         class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="/catgory/wigs">WIGS</a></li>
-                                                        <li><a href="/catgory/glasses">GLASSES</a></li>
-                                                        <li><a href="/catgory/shoes">SHOES</a></li>
-                                                        <li><a href="/catgory/clothes">CLOTHES</a></li>
-                                                        <li><a href="/catgory/hair-products ">HAIR PRODUCTS</a></li>
+                                                        <li><a href="/category/wigs">WIGS</a></li>
+                                                        <li><a href="/category/glasses">GLASSES</a></li>
+                                                        <li><a href="/category/shoes">SHOES</a></li>
+                                                        <li><a href="/category/clothes">CLOTHES</a></li>
+                                                        <li><a href="/category/hair-products ">HAIR PRODUCTS</a></li>
                                                     </ul>
                                                 </div><!-- End .menu-col -->
                                             </div><!-- End .col-md-6 -->
@@ -128,7 +130,7 @@
                                     </div><!-- End .megamenu megamenu-sm -->
                                 </li>
                                 <li>
-                                    <a href="/" class="sf-with-ul">Shop with Della</a>
+                                    <a href="#" class="sf-with-ul">Shop with Della</a>
 
                                     <div class="megamenu megamenu-md">
                                         <div class="row no-gutters">
@@ -140,10 +142,10 @@
                                                             <!-- End .menu-title -->
                                                             <ul>
                                                                 <li><a href="/all-products">ALL</a></li>
-                                                                <li><a href="/catgory/men">Men</a></li>
-                                                                <li><a href="/catgory/women">Women</a></li>
+                                                                <li><a href="/category/men">Men</a></li>
+                                                                <li><a href="/category/women">Women</a></li>
 
-                                                                <li><a href="/catgory/wigs"><span>Wigs<span
+                                                                <li><a href="/category/wigs"><span>Wigs<span
                                                                                 class="tip tip-new">discount</span></span></a>
                                                                 </li>
                                                             </ul>
@@ -206,10 +208,10 @@
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
 
-                        <button class="mobile-menu-toggler">
+                        <!-- <button class="mobile-menu-toggler">
                             <span class="sr-only"></span>
                             <i class="icon-bars"></i>
-                        </button>
+                        </button> -->
                     </div><!-- End .header-left -->
 
                     <div class="header-center">
@@ -222,23 +224,21 @@
                     <div class="header-right">
                         <div class="header-search header-search-extended header-search-visible">
                             <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
-                            <form action="#" method="get">
+                            <!-- <form action="#" method="get"> -->
                                 <div class="header-search-wrapper">
                                     <label for="q" class="sr-only">Search</label>
                                     <input type="search" class="form-control" name="q" id="q"
                                         placeholder="Search product ..." required>
-                                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                                    <button class="btn btn-primary" type="button" onclick="window.location.href='/search?s=' + document.getElementById('q').value;"><i class="icon-search"></i></button>
                                 </div><!-- End .header-search-wrapper -->
-                            </form>
+                            <!-- </form> -->
                         </div><!-- End .header-search -->
 
 
 
                         <div class="dropdown cart-dropdown">
-                            <a href="/cart" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <a href="{% url 'cart' %}" class="dropdown-toggle" role="button">
                                 <i class="icon-shopping-cart"></i>
-
                             </a>
 
 
@@ -423,7 +423,7 @@
 
                     </li>
                     <li>
-                        <a href="product" class="sf-with-ul">SHOP</a>
+                        <a href="#" class="sf-with-ul">SHOP</a>
 
 
 
@@ -437,8 +437,8 @@
                             <li><a href="shop">HAIR PRODUCTS</a></li>
                         </ul>
                     <li>
-
-                        <a href="product" class="sf-with-ul">SHOP</a>
+<!-- 
+                        <a href="product" class="sf-with-ul">SHOP</a> -->
 
 
 
@@ -451,7 +451,7 @@
                             <li><a href="contact">CONTACT</a></li>
 
                         </ul>
-                        <a href="product" class="sf-with-ul">Della Pages</a>
+                        <a href="#" class="sf-with-ul">Della Pages</a>
         </div><!-- End .col-md-6 -->
 
 
@@ -492,7 +492,9 @@
                             <div class="tab-content" id="tab-content-5">
                                 <div class="tab-pane fade show active" id="signin" role="tabpanel"
                                     aria-labelledby="signin-tab">
-                                    <form action="#">
+                                    <form action="/login" method="post">
+                                        {% csrf_token %}
+
                                         <div class="form-group">
                                             <label for="singin-email">Username or email address *</label>
                                             <input type="text" class="form-control" id="singin-email"
@@ -506,10 +508,12 @@
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
+                                            <!-- <button type="submit" class="btn btn-outline-primary-2">
                                                 <span>LOG IN</span>
                                                 <i class="icon-long-arrow-right"></i>
-                                            </button>
+                                            </button> -->
+                                            <input type="submit" class="btn btn-outline-primary-2" name="login-btn" value="LOG IN">
+
 
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input"
@@ -593,6 +597,7 @@
         </div><!-- End .modal-dialog -->
     </div><!-- End .modal -->
 
+    {% comment %}
     <div class="container newsletter-popup-container mfp-hide" id="newsletter-popup-form">
         <div class="row justify-content-center">
             <div class="col-10">
@@ -623,6 +628,9 @@
             </div>
         </div>
     </div>
+    {% endcomment %}
+
+
     <!-- Plugins JS File -->
     <script src="/static/assets/js/jquery.min.js"></script>
     <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
@@ -635,6 +643,24 @@
     <!-- Main JS File -->
     <script src="/static/assets/js/main.js"></script>
     <script src="/static/assets/js/demo-18.js"></script>
+
+    <script>
+        function updateMainImage(clickedElement) {
+            var newSrc = clickedElement.getAttribute('data-image');
+            var newZoomSrc = clickedElement.getAttribute('data-zoom-image');
+            var mainImage = document.getElementById('product-zoom');
+            mainImage.src = newSrc;
+            mainImage.setAttribute('data-zoom-image', newZoomSrc);
+
+            // Remove 'active' class from all items
+            var items = document.getElementsByClassName('product-gallery-item');
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.remove('active');
+            }
+            // Add 'active' class to clicked item
+            clickedElement.classList.add('active');
+        }
+        </script>
 </body>
 
 

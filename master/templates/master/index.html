@@ -32,7 +32,7 @@
 
                                 </li>
                                 <li>
-                                    <a href="product" class="sf-with-ul">SHOP</a>
+                                    <a href="#" class="sf-with-ul">SHOP</a>
 
                                     <div class="megamenu megamenu-sm">
                                         <div class="row no-gutters">
@@ -41,14 +41,14 @@
                                                     <div class="menu-title">Categories</div>
                                                     <!-- End .menu-title -->
                                                     <ul>
-                                                        <li><a href="shop">MEN</a></li>
-                                                        <li><a href="shop"><span>WOMEN<span
+                                                        <li><a href="category/men">MEN</a></li>
+                                                        <li><a href="category/women"><span>WOMEN<span
                                                                         class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="shop">WIGS</a></li>
-                                                        <li><a href="shop">GLASSES</a></li>
-                                                        <li><a href="shop">SHOES</a></li>
-                                                        <li><a href="shop">CLOTHES</a></li>
-                                                        <li><a href="shop">HAIR PRODUCTS</a></li>
+                                                        <li><a href="category/wigs">WIGS</a></li>
+                                                        <li><a href="category/glasses">GLASSES</a></li>
+                                                        <li><a href="category/shoes">SHOES</a></li>
+                                                        <li><a href="category/clothes">CLOTHES</a></li>
+                                                        <li><a href="category/hair-products">HAIR PRODUCTS</a></li>
                                                     </ul>
                                                 </div><!-- End .menu-col -->
                                             </div><!-- End .col-md-6 -->
@@ -82,10 +82,10 @@
                                                             <!-- End .menu-title -->
                                                             <ul>
                                                                 <li><a href="all-products">ALL</a></li>
-                                                                <li><a href="all-products">Men</a></li>
-                                                                <li><a href="all-products">Women</a></li>
+                                                                <li><a href="category/men">Men</a></li>
+                                                                <li><a href="category/women">Women</a></li>
 
-                                                                <li><a href="all-products"><span>Wigs<span
+                                                                <li><a href="category/wigs"><span>Wigs<span
                                                                                 class="tip tip-new">discount</span></span></a>
                                                                 </li>
                                                             </ul>
@@ -94,7 +94,7 @@
                                                                 Della</div>
                                                             <!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="all-products"><span>Shop with
+                                                                <li><a href="category/all-products"><span>Shop with
                                                                             Della<span
                                                                                 class="tip tip-hot">Hot</span></span></a>
                                                                 </li>
@@ -165,7 +165,7 @@
                                     <label for="q" class="sr-only">Search</label>
                                     <input type="search" class="form-control" name="q" id="q"
                                         placeholder="Search product ..." required>
-                                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                                    <button class="btn btn-primary" type="button" onclick="window.location.href='/search?s=' + document.getElementById('q').value;"><i class="icon-search"></i></button>
                                 </div><!-- End .header-search-wrapper -->
                             </form>
                         </div><!-- End .header-search -->
@@ -232,32 +232,32 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-4">
                         <div class="banner banner-display banner-link-anim">
-                            <a href="#">
+                            <a href="/category/accessories">
                                 <img src="/static/assets/images/demos/demo-12/banners/banner-4.jpg" alt="Banner">
                             </a>
 
                             <div class="banner-content banner-content-center">
-                                <h3 class="banner-title text-white"><a href="#">Accessories</a></h3>
+                                <h3 class="banner-title text-white"><a href="/category/accessories">Accessories</a></h3>
                                 <!-- End .banner-title -->
-                                <h4 class="banner-subtitle text-white"><a href="#">16 Items</a></h4>
+                                <!-- <h4 class="banner-subtitle text-white"><a href="#">16 Items</a></h4> -->
                                 <!-- End .banner-subtitle -->
-                                <a href="shop" class="btn btn-outline-white banner-link">Shop Now</a>
+                                <a href="/category/accessories" class="btn btn-outline-white banner-link">Shop Now</a>
                             </div><!-- End .banner-content -->
                         </div><!-- End .banner -->
                     </div><!-- End .col-sm-6 -->
 
                     <div class="col-sm-6 col-lg-4 order-lg-last">
                         <div class="banner banner-display banner-link-anim">
-                            <a href="#">
+                            <a href="/category/jewellery">
                                 <img src="/static/assets/images/demos/demo-12/banners/banner-5.jpg" alt="Banner">
                             </a>
 
                             <div class="banner-content banner-content-center">
-                                <h3 class="banner-title text-white"><a href="#">Jewellery</a></h3>
+                                <h3 class="banner-title text-white"><a href="/category/jewellery">Jewellery</a></h3>
                                 <!-- End .banner-title -->
                                 <h4 class="banner-subtitle text-white"><a href="#">8 Items</a></h4>
                                 <!-- End .banner-subtitle -->
-                                <a href="shop" class="btn btn-outline-white banner-link">Shop Now</a>
+                                <a href="/category/jewellery" class="btn btn-outline-white banner-link">Shop Now</a>
                             </div><!-- End .banner-content -->
                         </div><!-- End .banner -->
                     </div><!-- End .col-sm-6 -->
@@ -266,32 +266,32 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-12">
                                 <div class="banner banner-display banner-link-anim">
-                                    <a href="#">
+                                    <a href="/category/clothing">
                                         <img src="/static/assets/images/demos/demo-12/banners/banner-6.jpg" alt="Banner">
                                     </a>
 
                                     <div class="banner-content banner-content-center">
-                                        <h3 class="banner-title text-white"><a href="#">Clothing</a></h3>
+                                        <h3 class="banner-title text-white"><a href="/category/clothing">Clothing</a></h3>
                                         <!-- End .banner-title -->
                                         <h4 class="banner-subtitle text-white"><a href="#">24 Items</a></h4>
                                         <!-- End .banner-subtitle -->
-                                        <a href="shop" class="btn btn-outline-white banner-link">Discover Now</a>
+                                        <a href="/category/clothing" class="btn btn-outline-white banner-link">Discover Now</a>
                                     </div><!-- End .banner-content -->
                                 </div><!-- End .banner -->
                             </div><!-- End .col-sm-6 -->
 
                             <div class="col-sm-6 col-lg-12">
                                 <div class="banner banner-display banner-link-anim">
-                                    <a href="#">
+                                    <a href="/category/shoes">
                                         <img src="/static/assets/images/demos/demo-12/banners/banner-7.jpg" alt="Banner">
                                     </a>
 
                                     <div class="banner-content banner-content-center">
-                                        <h3 class="banner-title text-white"><a href="#">Shoes</a></h3>
+                                        <h3 class="banner-title text-white"><a href="/category/shoes">Shoes</a></h3>
                                         <!-- End .banner-title -->
                                         <h4 class="banner-subtitle text-white"><a href="#">6 Items</a></h4>
                                         <!-- End .banner-subtitle -->
-                                        <a href="shop" class="btn btn-outline-white banner-link">Shop Now</a>
+                                        <a href="/category/shoes" class="btn btn-outline-white banner-link">Shop Now</a>
                                     </div><!-- End .banner-content -->
                                 </div><!-- End .banner -->
                             </div><!-- End .col-sm-6 -->
@@ -315,7 +315,7 @@
                         <div class="col-6 col-md-4">
                             <div class="product product-4">
                                 <figure class="product-media">
-                                    <a href="product">
+                                    <a href="/product/{{product.id}}">
                                         <img src="/static/assets/{{product.ogimages.0}}"
                                             alt="Product image" class="product-image">
 
@@ -325,22 +325,22 @@
                                     </a>
 
                                     <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
+                                        <a href="/add-to-wishlist/{{product.id}}" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
                                                 wishlist</span></a>
-                                        <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                            title="Quick view"><span>Quick view</span></a>
+                                        <!-- <a href="popup/quickView" class="btn-product-icon btn-quickview"
+                                            title="Quick view"><span>Quick view</span></a> -->
                                     </div><!-- End .product-action -->
 
                                     <div class="product-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        <a href="/product/{{product.id}}" class="btn-product btn-cart"><span>add to cart</span></a>
                                     </div><!-- End .product-action -->
                                 </figure><!-- End .product-media -->
 
                                 <div class="product-body">
                                     <div class="product-cat">
-                                        <a href="#">{{product.ogcategory.0}}</a>
+                                        <a href="/category/{{product.ogcategory.0}}">{{product.ogcategory.0}}</a>
                                     </div><!-- End .product-cat -->
-                                    <h3 class="product-title"><a href="product">{{product.name}}</a></h3>
+                                    <h3 class="product-title"><a href="/product/{{product.id}}">{{product.name}}</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
                                         ${{product.price}}
@@ -377,14 +377,16 @@
             <aside class="col-lg-3">
                 <div class="sidebar sidebar-home">
                     <div class="row">
+                        {% comment %}
                         <div class="col-sm-6 col-lg-12">
                             <div class="widget widget-products">
                                 <h4 class="widget-title">Best Selling</h4><!-- End .widget-title -->
 
                                 <div class="products">
+                                    
                                     <div class="product product-sm">
                                         <figure class="product-media">
-                                            <a href="product">
+                                            <a href="/product/">
                                                 <img src="/static/assets/images/demos/demo-18/products/small/product-1.jpg"
                                                     alt="Product image" class="product-image">
                                             </a>
@@ -465,7 +467,7 @@
                                 </div><!-- End .products -->
                             </div><!-- End .widget widget-products -->
                         </div><!-- End .col-sm-6 col-lg-12 -->
-
+                        {% endcomment %}
                         <div class="col-sm-6 col-lg-12">
                             <div class="widget widget-subscribe"
                                 style="background-image: url(/static/assets/images/demos/demo-18/bg-newsletter.jpg);">
@@ -600,242 +602,40 @@
                                                 }
                                             }
                                         }'>
+                            {% for product in popular|slice:":4" %}
                             <div class="product product-7 text-center">
                                 <figure class="product-media">
-                                    <a href="product">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-1-1.jpg"
+                                    <a href="/product/{{product.id}}">
+                                        <img src="/static/assets/{{product.ogimages.0}}"
                                             alt="Product image" class="product-image">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-1-2.jpg"
+                                        {% if product.ogimages.1 %}
+                                        <img src="/static/assets/{{product.ogimages.1}}"
                                             alt="Product image" class="product-image-hover">
+                                        {% endif %}
                                     </a>
 
                                     <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
+                                        <a href="/add-to-wishlist/{{product.id}}" class="btn-product-icon btn-wishlist btn-expandable"><span>add
                                                 to wishlist</span></a>
-                                        <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                            title="Quick view"><span>Quick view</span></a>
+
                                     </div><!-- End .product-action-vertical -->
 
                                     <div class="product-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to
+                                        <a href="/product/{{product.id}}" class="btn-product btn-cart"><span>add to
                                                 cart</span></a>
                                     </div><!-- End .product-action -->
                                 </figure><!-- End .product-media -->
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="product">Denim jacket</a></h3>
+                                    <h3 class="product-title"><a href="/product/{{product.id}}">{{product.name}}</a></h3>
                                     <!-- End .product-title -->
                                     <div class="product-price">
-                                        $19.99
+                                        ${{product.price}}
                                     </div><!-- End .product-price -->
-
-                                    <div class="ratings-container">
-                                        <div class="ratings">
-                                            <div class="ratings-val" style="width: 100%;"></div>
-                                            <!-- End .ratings-val -->
-                                        </div><!-- End .ratings -->
-                                        <span class="ratings-text">( 6 Reviews )</span>
-                                    </div><!-- End .rating-container -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-1-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-1-2-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-1-3-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
                                 </div><!-- End .product-body -->
                             </div><!-- End .product -->
 
-                            <div class="product product-7 text-center">
-                                <figure class="product-media">
-                                    <a href="product">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-2-1.jpg"
-                                            alt="Product image" class="product-image">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-2-2.jpg"
-                                            alt="Product image" class="product-image-hover">
-                                    </a>
-
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                to wishlist</span></a>
-                                        <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                            title="Quick view"><span>Quick view</span></a>
-                                    </div><!-- End .product-action-vertical -->
-
-                                    <div class="product-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to
-                                                cart</span></a>
-                                    </div><!-- End .product-action -->
-                                </figure><!-- End .product-media -->
-
-                                <div class="product-body">
-                                    <h3 class="product-title"><a href="product">Sandals</a></h3>
-                                    <!-- End .product-title -->
-                                    <div class="product-price">
-                                        $24.99
-                                    </div><!-- End .product-price -->
-
-                                    <div class="ratings-container">
-                                        <div class="ratings">
-                                            <div class="ratings-val" style="width: 60%;"></div>
-                                            <!-- End .ratings-val -->
-                                        </div><!-- End .ratings -->
-                                        <span class="ratings-text">( 2 Reviews )</span>
-                                    </div><!-- End .rating-container -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product -->
-
-                            <div class="product product-7 text-center">
-                                <figure class="product-media">
-                                    <span class="product-label label-sale">sale</span>
-                                    <a href="product">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-3-1.jpg"
-                                            alt="Product image" class="product-image">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-3-2.jpg"
-                                            alt="Product image" class="product-image-hover">
-                                    </a>
-
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                to wishlist</span></a>
-                                        <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                            title="Quick view"><span>Quick view</span></a>
-                                    </div><!-- End .product-action-vertical -->
-
-                                    <div class="product-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to
-                                                cart</span></a>
-                                    </div><!-- End .product-action -->
-                                </figure><!-- End .product-media -->
-
-                                <div class="product-body">
-                                    <h3 class="product-title"><a href="product">Printed sweatshirt</a>
-                                    </h3><!-- End .product-title -->
-                                    <div class="product-price">
-                                        <span class="new-price">Now $7.99</span>
-                                        <span class="old-price">Was $12.99</span>
-                                    </div><!-- End .product-price -->
-
-                                    <div class="ratings-container">
-                                        <div class="ratings">
-                                            <div class="ratings-val" style="width: 60%;"></div>
-                                            <!-- End .ratings-val -->
-                                        </div><!-- End .ratings -->
-                                        <span class="ratings-text">( 3 Reviews )</span>
-                                    </div><!-- End .rating-container -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product -->
-
-                            <div class="product product-7 text-center">
-                                <figure class="product-media">
-                                    <a href="product">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-4-1.jpg"
-                                            alt="Product image" class="product-image">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-4-2.jpg"
-                                            alt="Product image" class="product-image-hover">
-                                    </a>
-
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                to wishlist</span></a>
-                                        <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                            title="Quick view"><span>Quick view</span></a>
-                                    </div><!-- End .product-action-vertical -->
-
-                                    <div class="product-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to
-                                                cart</span></a>
-                                    </div><!-- End .product-action -->
-                                </figure><!-- End .product-media -->
-
-                                <div class="product-body">
-                                    <h3 class="product-title"><a href="product">Linen-blend paper bag
-                                            trousers</a></h3><!-- End .product-title -->
-                                    <div class="product-price">
-                                        $17.99
-                                    </div><!-- End .product-price -->
-
-                                    <div class="ratings-container">
-                                        <div class="ratings">
-                                            <div class="ratings-val" style="width: 80%;"></div>
-                                            <!-- End .ratings-val -->
-                                        </div><!-- End .ratings -->
-                                        <span class="ratings-text">( 2 Reviews )</span>
-                                    </div><!-- End .rating-container -->
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-4-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-4-2-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product -->
-
-                            <div class="product product-7 text-center">
-                                <figure class="product-media">
-                                    <a href="product">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-1-1.jpg"
-                                            alt="Product image" class="product-image">
-                                        <img src="/static/assets/images/demos/demo-9/products/product-1-2.jpg"
-                                            alt="Product image" class="product-image-hover">
-                                    </a>
-
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                to wishlist</span></a>
-                                        <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                            title="Quick view"><span>Quick view</span></a>
-                                    </div><!-- End .product-action-vertical -->
-
-                                    <div class="product-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to
-                                                cart</span></a>
-                                    </div><!-- End .product-action -->
-                                </figure><!-- End .product-media -->
-
-                                <div class="product-body">
-                                    <h3 class="product-title"><a href="product">Denim jacket</a></h3>
-                                    <!-- End .product-title -->
-                                    <div class="product-price">
-                                        $19.99
-                                    </div><!-- End .product-price -->
-
-                                    <div class="ratings-container">
-                                        <div class="ratings">
-                                            <div class="ratings-val" style="width: 100%;"></div>
-                                            <!-- End .ratings-val -->
-                                        </div><!-- End .ratings -->
-                                        <span class="ratings-text">( 6 Reviews )</span>
-                                    </div><!-- End .rating-container -->
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-1-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-1-2-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                        <a href="#">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-1-3-thumb.jpg"
-                                                alt="product desc">
-                                        </a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product -->
+                            {% endfor %}
                         </div><!-- End .owl-carousel -->
                     </div><!-- .End .tab-pane -->
                     <div class="tab-pane p-0 fade" id="trending-men-tab" role="tabpanel"
@@ -913,7 +713,7 @@
                                 <div class="product-txt">
                                     <p class="text-white">Wedge-heel sandals</p>
                                 </div>
-                                <a href="#" class="btn btn-outline-white banner-link">Shop Now</a>
+                                <a href="/category/shoes" class="btn btn-outline-white banner-link">Shop Now</a>
                             </div>
                         </div>
                     </div><!-- End .banner banner-overlay -->
@@ -946,161 +746,49 @@
                                                     }
                                                 }
                                             }'>
+                                
+                                {% for shoe in shoes|slice:":4" %}
                                 <div class="product product-7">
                                     <figure class="product-media">
-                                        <span class="product-label label-sale">30% off</span>
-                                        <a href="product">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-5-1.jpg"
+                                        <!-- <span class="product-label label-sale">30% off</span> -->
+                                        <a href="/product/{{shoe.id}}">
+                                            <img src="/static/assets/{{shoe.ogimages.0}}"
                                                 alt="Product image" class="product-image">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-5-2.jpg"
+                                            {% if shoe.ogimages.1 %}
+                                            <img src="/static/assets/{{shoe.ogimages.1}}"
                                                 alt="Product image" class="product-image-hover">
+                                            {% endif %}
                                         </a>
 
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
+                                            <a href="/add-to-wishlist/{{shoe.id}}" class="btn-product-icon btn-wishlist btn-expandable"><span>add
                                                     to wishlist</span></a>
-                                            <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                                title="Quick view"><span>Quick view</span></a>
+                                            
                                         </div><!-- End .product-action-vertical -->
 
                                         <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart"><span>add to
+                                            <a href="/product/{{shoe.id}}" class="btn-product btn-cart"><span>add to
                                                     cart</span></a>
                                         </div><!-- End .product-action -->
                                     </figure><!-- End .product-media -->
 
                                     <div class="product-body">
-                                        <h3 class="product-title"><a href="product">Trainers</a></h3>
+                                        <h3 class="product-title"><a href="/product/{{shoe.id}}">{{shoe.name}}</a></h3>
                                         <!-- End .product-title -->
                                         <div class="product-price">
-                                            <span class="new-price">Now $19.99</span>
-                                            <span class="old-price">Was $29.99</span>
+                                            <span class="new-price">${{shoe.price}}</span>
                                         </div><!-- End .product-price -->
                                         <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
+                                            <!-- <div class="ratings">
+                                                <div class="ratings-val" style="width: 100%;"></div> -->
                                                 <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 6 Reviews )</span>
+                                            <!-- </div>--><!--End .ratings -->
                                         </div><!-- End .rating-container -->
                                     </div><!-- End .product-body -->
                                 </div><!-- End .product -->
+                                {% endfor %}
 
-                                <div class="product product-7">
-                                    <figure class="product-media">
-                                        <a href="product">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-6-1.jpg"
-                                                alt="Product image" class="product-image">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-6-2.jpg"
-                                                alt="Product image" class="product-image-hover">
-                                        </a>
 
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                    to wishlist</span></a>
-                                            <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                                title="Quick view"><span>Quick view</span></a>
-                                        </div><!-- End .product-action-vertical -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart"><span>add to
-                                                    cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <h3 class="product-title"><a href="product">Sandals</a></h3>
-                                        <!-- End .product-title -->
-                                        <div class="product-price">
-                                            $12.99
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 60%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 4 Reviews )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-
-                                <div class="product product-7">
-                                    <figure class="product-media">
-                                        <a href="product">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-7-1.jpg"
-                                                alt="Product image" class="product-image">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-7-2.jpg"
-                                                alt="Product image" class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                    to wishlist</span></a>
-                                            <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                                title="Quick view"><span>Quick view</span></a>
-                                        </div><!-- End .product-action-vertical -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart"><span>add to
-                                                    cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <h3 class="product-title"><a href="product">Loafers</a></h3>
-                                        <!-- End .product-title -->
-                                        <div class="product-price">
-                                            $9.99
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 80%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 2 Reviews )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
-
-                                <div class="product product-7">
-                                    <figure class="product-media">
-                                        <span class="product-label label-sale">30% off</span>
-                                        <a href="product">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-5-1.jpg"
-                                                alt="Product image" class="product-image">
-                                            <img src="/static/assets/images/demos/demo-9/products/product-5-2.jpg"
-                                                alt="Product image" class="product-image-hover">
-                                        </a>
-
-                                        <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add
-                                                    to wishlist</span></a>
-                                            <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                                title="Quick view"><span>Quick view</span></a>
-                                        </div><!-- End .product-action-vertical -->
-
-                                        <div class="product-action">
-                                            <a href="#" class="btn-product btn-cart"><span>add to
-                                                    cart</span></a>
-                                        </div><!-- End .product-action -->
-                                    </figure><!-- End .product-media -->
-
-                                    <div class="product-body">
-                                        <h3 class="product-title"><a href="product">Trainers</a></h3>
-                                        <!-- End .product-title -->
-                                        <div class="product-price">
-                                            <span class="new-price">Now $19.99</span>
-                                            <span class="old-price">Was $29.99</span>
-                                        </div><!-- End .product-price -->
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div><!-- End .ratings -->
-                                            <span class="ratings-text">( 6 Reviews )</span>
-                                        </div><!-- End .rating-container -->
-                                    </div><!-- End .product-body -->
-                                </div><!-- End .product -->
                             </div><!-- End .owl-carousel -->
                         </div><!-- .End .tab-pane -->
                         <div class="tab-pane p-0 fade" id="featured-men-tab" role="tabpanel"
@@ -1408,7 +1096,7 @@
                 <label for="mobile-search" class="sr-only">Search</label>
                 <input type="search" class="form-control" name="mobile-search" id="mobile-search"
                     placeholder="Search in..." required>
-                <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                    <button class="btn btn-primary" type="button" onclick="window.location.href='/search?s=' + document.getElementById('mobile-search').value;"><i class="icon-search"></i></button>
             </form>
 
             <nav class="mobile-nav">
@@ -1419,7 +1107,7 @@
 
                     </li>
                     <li>
-                        <a href="product" class="sf-with-ul">SHOP</a>
+                        <a href="#" class="sf-with-ul">Shop</a>
 
 
 
@@ -1433,7 +1121,7 @@
                             <li><a href="shop">HAIR PRODUCTS</a></li>
                         </ul>
                     <li>
-                        <a href="product" class="sf-with-ul">SHOP</a>
+             
 
 
 
@@ -1446,7 +1134,7 @@
                             <li><a href="contact">CONTACT</a></li>
 
                         </ul>
-                        <a href="product" class="sf-with-ul">Della Pages</a>
+                        <a href="#" class="sf-with-ul">Della Pages</a>
         </div><!-- End .col-md-6 -->
 
 

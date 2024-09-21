@@ -17,6 +17,11 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,8 +31,8 @@ SECRET_KEY = 'django-insecure-t4qm*6x5*70f$t4#3)5)_e-1%kqtu_^3kq*dh8lbvrn34p&!&3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://897e-105-119-4-175.ngrok-free.app']
 
 # Application definition
 
@@ -40,6 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'master',
     'rest_framework',
+    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 
 ]
 
@@ -58,7 +69,7 @@ ROOT_URLCONF = 'della.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +116,28 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'allauth.account.auth_backends.AuthenticationBackend']
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE' : [
+            'profile',
+            'email'
+        ],
+        'APP': {
+            'client_id': os.environ['CLIENT_ID'],
+            'secret': os.environ['CLIENT_SECRET'],
+        },
+        'AUTH_PARAMS': {
+            'access_type':'online',
+        }
+    }
+}
+
+SITE_ID = 2
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

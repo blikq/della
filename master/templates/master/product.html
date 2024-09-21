@@ -12,17 +12,7 @@
 
                     </ol>
 
-                    <nav class="product-pager ml-auto" aria-label="Product">
-                        <a class="product-pager-link product-pager-prev" href="#" aria-label="Previous" tabindex="-1">
-                            <i class="icon-angle-left"></i>
-                            <span>Prev</span>
-                        </a>
-
-                        <a class="product-pager-link product-pager-next" href="#" aria-label="Next" tabindex="-1">
-                            <span>Next</span>
-                            <i class="icon-angle-right"></i>
-                        </a>
-                    </nav><!-- End .pager-nav -->
+                    
                 </div><!-- End .container -->
             </nav><!-- End .breadcrumb-nav -->
 
@@ -35,7 +25,7 @@
                                     <div class="row">
                                         <figure class="product-main-image">
                                             <img id="product-zoom" src="/static/assets/{{product.ogimages.0}}"
-                                                data-zoom-image="/static/assets/images/products/cart/product-1.jpg"
+                                                data-zoom-image="/static/assets/{{product.ogimages.0}}"
                                                 alt="product image">
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
@@ -44,33 +34,17 @@
                                         </figure><!-- End .product-main-image -->
 
                                         <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#"
-                                                data-image="/static/assets/images/products/cart/product-1.jpg"
-                                                data-zoom-image="/static/assets/images/products/cart/product-1.jpg">
-                                                <img src="/static/assets/images/products/cart/product-1.jpg" alt="product side">
+                                            {% for image in product.ogimages|slice:":4" %}
+                                            <a class="product-gallery-item {% if forloop.first %}active{% endif %}" href="#"
+                                                data-image="/static/assets/{{ image }}"
+                                                data-zoom-image="/static/assets/{{ image }}"
+                                                onclick="updateMainImage(this); return false;">
+                                                <img src="/static/assets/{{ image }}" alt="product image {{ forloop.counter }}" style="width: 100%; height: 100%; object-fit: cover;">
                                             </a>
-
-                                            <a class="product-gallery-item" href="#"
-                                                data-image="/static/assets/images/products/cart/product-1.jpgg"
-                                                data-zoom-image="/static/assets/images/products/cart/product-1.jpg">
-                                                <img src="/static/assets/images/products/cart/product-1.jpg"
-                                                    alt="product cross">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#"
-                                                data-image="/static/assets/images/products/cart/product-1.jpg"
-                                                data-zoom-image="/static/assets/images/products/cart/product-1.jpg">
-                                                <img src="/static/assets/images/products/cart/product-1.jpg"
-                                                    alt="product with model">
-                                            </a>
-
-
-                                            <a class="product-gallery-item" href="#"
-                                                data-image="/static/assets/images/products/cart/product-1.jpg"
-                                                data-zoom-image="/static/assets/images/products/cart/product-1.jpg">
-                                                <img src="/static/assets/images/products/cart/product-1.jpg" alt="product back">
-                                            </a>
+                                            {% endfor %}
                                         </div><!-- End .product-image-gallery -->
+
+                                        
                                     </div><!-- End .row -->
                                 </div><!-- End .product-gallery -->
                             </div><!-- End .col-md-6 -->
@@ -79,7 +53,8 @@
                                 <div class="product-details">
                                     <h1 class="product-title">{{product.name}}</h1>
                                     <!-- End .product-title -->
-
+                                    
+                                    {% comment %}
                                     <div class="ratings-container">
                                         <div class="ratings">
                                             <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
@@ -87,7 +62,7 @@
                                         <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews
                                             )</a>
                                     </div><!-- End .rating-container -->
-
+                                    {% endcomment %}
                                     <div class="product-price">
                                         ${{product.price}}
                                     </div><!-- End .product-price -->
@@ -97,7 +72,7 @@
                                             metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus.
                                         </p>
                                     </div><!-- End .product-content -->
-
+                                    {% comment %}
                                     <div class="details-filter-row details-row-size">
                                         <label>Color:</label>
 
@@ -110,19 +85,22 @@
                                             </a>
                                         </div><!-- End .product-nav -->
                                     </div><!-- End .details-filter-row -->
+                                    {% endcomment %}
 
                                     <form method="post">
                                         {% csrf_token %}
                                         <div class="details-filter-row details-row-size">
                                             <label for="size">Size:</label>
                                             <div class="select-custom">
-                                                <select name="size" id="size" class="form-control">
-                                                    <option value="#" selected="selected">Select a size</option>
+                                                <select name="size" id="size" class="form-control" required>
+                                                    <option value="" selected disabled>Select a size</option>
                                                     {% for size in product.ogsize %}
                                                     <option value="{{size.name}}">{{size.name}}</option>
                                                     {% endfor %}
                                                 </select>
                                             </div><!-- End .select-custom -->
+
+                                            
 
                                             <a href="#" class="size-guide"><i class="icon-th-list"></i>size guide</a>
                                         </div><!-- End .details-filter-row -->
@@ -139,10 +117,10 @@
                                             <input type="submit" class="btn-product btn-cart" name="Submit" value="Add to cart">
 
                                             <div class="details-action-wrapper">
-                                            <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to
+                                            <a href="/add-to-wishlist/{{product.id}}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to
                                                     Wishlist</span></a>
-                                            <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to
-                                                    Compare</span></a>
+                                            <!-- <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to
+                                                    Compare</span></a> -->
                                         </div><!-- End .details-action-wrapper -->
                                         </div><!-- End .product-details-action -->
                                     </form>    
@@ -150,9 +128,10 @@
                                     <div class="product-details-footer">
                                         <div class="product-cat">
                                             <span>Category:</span>
-                                            <a href="#">Women</a>,
-                                            <a href="#">Dresses</a>,
-                                            <a href="#">Yellow</a>
+                                            {% for category in product.ogcategory %}
+                                            <a href="#">{{category.name}}</a>,
+                                            {% endfor %}
+                                           
                                         </div><!-- End .product-cat -->
 
                                         <div class="social-icons social-icons-sm">
@@ -192,7 +171,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="product-review-link" data-toggle="tab"
                                     href="#product-review-tab" role="tab" aria-controls="product-review-tab"
-                                    aria-selected="false">Reviews (2)</a>
+                                    aria-selected="false">Reviews</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -258,71 +237,104 @@
                             <div class="tab-pane fade" id="product-review-tab" role="tabpanel"
                                 aria-labelledby="product-review-link">
                                 <div class="reviews">
-                                    <h3>Reviews (2)</h3>
+                                    <h3>Recent Reviews</h3>
+                                    {% for review in reviews|slice:":5" %}
                                     <div class="review">
                                         <div class="row no-gutters">
                                             <div class="col-auto">
-                                                <h4><a href="#">Samanta J.</a></h4>
+                                                <h4><a href="#">{{review.user.first_name}}</a></h4>
                                                 <div class="ratings-container">
                                                     <div class="ratings">
-                                                        <div class="ratings-val" style="width: 80%;"></div>
+                                                        <div class="ratings-val" style="width: {{review.stars}}%;"></div>
                                                         <!-- End .ratings-val -->
                                                     </div><!-- End .ratings -->
                                                 </div><!-- End .rating-container -->
-                                                <span class="review-date">6 days ago</span>
+                                                <span class="review-date">{{review.created_at}}</span>
                                             </div><!-- End .col -->
                                             <div class="col">
-                                                <h4>Good, perfect size</h4>
+                                                <h4>{{review.msg}}</h4>
 
                                                 <div class="review-content">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-                                                        cum dolores assumenda asperiores facilis porro reprehenderit
-                                                        animi culpa atque blanditiis commodi perspiciatis doloremque,
-                                                        possimus, explicabo, autem fugit beatae quae voluptas!</p>
+                                                    <p>{{review.review}}</p>
                                                 </div><!-- End .review-content -->
 
+                                                {% comment %}
                                                 <div class="review-action">
                                                     <a href="#"><i class="icon-thumbs-up"></i>Helpful (2)</a>
                                                     <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
                                                 </div><!-- End .review-action -->
+
+                                                {% endcomment %}
                                             </div><!-- End .col-auto -->
                                         </div><!-- End .row -->
                                     </div><!-- End .review -->
-
-                                    <div class="review">
-                                        <div class="row no-gutters">
-                                            <div class="col-auto">
-                                                <h4><a href="#">John Doe</a></h4>
-                                                <div class="ratings-container">
-                                                    <div class="ratings">
-                                                        <div class="ratings-val" style="width: 100%;"></div>
-                                                        <!-- End .ratings-val -->
-                                                    </div><!-- End .ratings -->
-                                                </div><!-- End .rating-container -->
-                                                <span class="review-date">5 days ago</span>
-                                            </div><!-- End .col -->
-                                            <div class="col">
-                                                <h4>Very good</h4>
-
-                                                <div class="review-content">
-                                                    <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum
-                                                        blanditiis laudantium iste amet. Cum non voluptate eos enim, ab
-                                                        cumque nam, modi, quas iure illum repellendus, blanditiis
-                                                        perspiciatis beatae!</p>
-                                                </div><!-- End .review-content -->
-
-                                                <div class="review-action">
-                                                    <a href="#"><i class="icon-thumbs-up"></i>Helpful (0)</a>
-                                                    <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
-                                                </div><!-- End .review-action -->
-                                            </div><!-- End .col-auto -->
-                                        </div><!-- End .row -->
-                                    </div><!-- End .review -->
+                                    {% endfor %}
+                                   
                                 </div><!-- End .reviews -->
                             </div><!-- .End .tab-pane -->
                         </div><!-- End .tab-content -->
                     </div><!-- End .product-details-tab -->
 
+                    <!-- COMMENT SECTION -->
+                    <div class="review-form">
+                        <h3>Leave a Review</h3>
+                        <form action="#" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="review-stars">Your Rating</label>
+                                <div class="rating-stars">
+                                    <input type="radio" id="star5" name="rating" value="5" required /><label for="star5">&#9733;</label>
+                                    <input type="radio" id="star4" name="rating" value="4" required /><label for="star4">&#9733;</label>
+                                    <input type="radio" id="star3" name="rating" value="3" required /><label for="star3">&#9733;</label>
+                                    <input type="radio" id="star2" name="rating" value="2" required /><label for="star2">&#9733;</label>
+                                    <input type="radio" id="star1" name="rating" value="1" required /><label for="star1">&#9733;</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-text">Your Review</label>
+                                <textarea id="review-text" name="review" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <input type="submit" name="submit-review" value="Submit Review" class="btn btn-primary"></input>
+                        </form>
+                    </div>
+
+                    <style>
+                        .rating-stars {
+                            display: inline-block;
+                            position: relative;
+                            height: 50px;
+                            line-height: 50px;
+                            font-size: 50px;
+                        }
+                        .rating-stars input {
+                            opacity: 0;
+                            position: relative;
+                            left: -50px;
+                            z-index: 10;
+                            cursor: pointer;
+                        }
+                        .rating-stars label {
+                            float: right;
+                            color: #ddd;
+                        }
+                        .rating-stars label:before {
+                            content: "\2605";
+                            position: absolute;
+                            opacity: 0;
+                        }
+                        .rating-stars input:hover ~ label,
+                        .rating-stars input:checked ~ label {
+                            color: #ffd700;
+                        }
+                        .rating-stars input:hover ~ label:before,
+                        .rating-stars input:checked ~ label:before {
+                            opacity: 1;
+                        }
+                        </style>
+
+                    <!-- COMMENT SECTION END -->
+
+                     
                     <h2 class="title text-center mb-4">You May Also Like</h2><!-- End .title text-center -->
 
                     <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
@@ -351,232 +363,51 @@
                                 }
                             }
                         }'>
+                        {% for product in popular|slice:":5" %}
                         <div class="product product-7 text-center">
                             <figure class="product-media">
-                                <span class="product-label label-new">New</span>
-                                <a href="product">
-                                    <img src="/static/assets/images/products/cart/product-1.jpg" alt="Product image"
+                                <!-- <span class="product-label label-new">New</span> -->
+                                <a href="/product/{{product.id}}">
+                                    <img src="/static/assets/{{product.ogimages.0}}" alt="Product image"
                                         class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
                                     <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
                                             wishlist</span></a>
-                                    <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
+                                    
+                                    
                                 </div><!-- End .product-action-vertical -->
 
                                 <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                    <a href="/product/{{product.id}}" class="btn-product btn-cart"><span>add to cart</span></a>
                                 </div><!-- End .product-action -->
                             </figure><!-- End .product-media -->
 
                             <div class="product-body">
                                 <div class="product-cat">
-                                    <a href="#">Women</a>
+                                    <a href="/category/{{product.ogcategory.0}}">{{product.ogcategory.0}}</a>
                                 </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product">Brown paperbag waist <br>pencil
-                                        skirt</a></h3><!-- End .product-title -->
+                                <h3 class="product-title"><a href="/product/{{product.id}}">{{product.name}}</a></h3><!-- End .product-title -->
                                 <div class="product-price">
-                                    $60.00
+                                    ${{product.price}}
                                 </div><!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
-                                    <span class="ratings-text">( 2 Reviews )</span>
-                                </div><!-- End .rating-container -->
 
-                                <div class="product-nav product-nav-thumbs">
-                                    <a href="#" class="active">
-                                        <img src="/static/assets/images/products/cart/product-1.jpg" alt="product desc">
-                                    </a>
-                                    <a href="#">
-                                        <img src="/static/assets/images/products/cart/product-1.jpg" alt="product desc">
-                                    </a>
-
-                                    <a href="#">
-                                        <img src="/static/assets/images/products/cart/product-1.jpg" alt="product desc">
-                                    </a>
-                                </div><!-- End .product-nav -->
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
-
-                        <div class="product product-7 text-center">
-                            <figure class="product-media">
-                                <span class="product-label label-out">Out of Stock</span>
-                                <a href="product">
-                                    <img src="/static/assets/images/products/cart/product-1.jpg" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action-vertical -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Jackets</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product">Khaki utility boiler jumpsuit</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    <span class="out-price">$120.00</span>
-                                </div><!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
-                                    <span class="ratings-text">( 6 Reviews )</span>
-                                </div><!-- End .rating-container -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-
-                        <div class="product product-7 text-center">
-                            <figure class="product-media">
-                                <span class="product-label label-top">Top</span>
-                                <a href="product">
-                                    <img src="/static/assets/images/products/cart/product-1.jpg" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action-vertical -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Shoes</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product">Light brown studded Wide fit wedges</a>
-                                </h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $110.00
-                                </div><!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
-                                    <span class="ratings-text">( 1 Reviews )</span>
-                                </div><!-- End .rating-container -->
-
-                                <div class="product-nav product-nav-thumbs">
-                                    <a href="#" class="active">
-                                        <img src="/static/assets/images/products/cart/product-1.jpg" alt="product desc">
-                                    </a>
-                                    <a href="#">
-                                        <img src="/static/assets/images/products/cart/product-1.jpg" alt="product desc">
-                                    </a>
-
-                                    <a href="#">
-                                        <img src="/static/assets/images/products/cart/product-1.jpg" alt="product desc">
-                                    </a>
-                                </div><!-- End .product-nav -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-
-                        <div class="product product-7 text-center">
-                            <figure class="product-media">
-                                <a href="product">
-                                    <img src="/static/assets/images/products/cart/product-1.jpg" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action-vertical -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Jumpers</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product">Yellow button front tea top</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $56.00
-                                </div><!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
-                                    <span class="ratings-text">( 0 Reviews )</span>
-                                </div><!-- End .rating-container -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-
-                        <div class="product product-7 text-center">
-                            <figure class="product-media">
-                                <a href="product">
-                                    <img src="/static/assets/images/products/cart/product-1.jpg" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to
-                                            wishlist</span></a>
-                                    <a href="popup/quickView" class="btn-product-icon btn-quickview"
-                                        title="Quick view"><span>Quick view</span></a>
-                                    <a href="#" class="btn-product-icon btn-compare"
-                                        title="Compare"><span>Compare</span></a>
-                                </div><!-- End .product-action-vertical -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Jeans</a>
-                                </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product">Blue utility pinafore denim dress</a>
-                                </h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $76.00
-                                </div><!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-                                    </div><!-- End .ratings -->
-                                    <span class="ratings-text">( 2 Reviews )</span>
-                                </div><!-- End .rating-container -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
+                        {% endfor %}
+                        
                     </div><!-- End .owl-carousel -->
                 </div><!-- End .container -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
 
+        <script>
+            document.querySelector('form').addEventListener('submit', function(e) {
+                if (document.getElementById('size').value === "") {
+                    e.preventDefault();
+                    alert('Please select a size before adding to cart.');
+                }
+            });
+        </script>
 {% endblock %}

@@ -27,6 +27,7 @@ class CustomUserAdmin(UserAdmin):
     )
     search_fields = ("email",)
     ordering = ("email",)
+    readonly_fields = ("id", "firstname", "lastname")
 
 class ImageInline(admin.TabularInline):  # or use StackedInline for a stacked layout
     model = Image
@@ -49,6 +50,15 @@ class SizeAdmin(admin.ModelAdmin):
 class CartItemAdmin(admin.ModelAdmin):
     readonly_fields = ("id",)
 
+class ReviewAdmin(admin.ModelAdmin):
+    readonly_fields = ("id",)
+
+class OrderedItemAdmin(admin.ModelAdmin):
+    readonly_fields = ("id",)
+
+class CheckoutDetailsAdmin(admin.ModelAdmin):
+    readonly_fields = ("id",)
+
 
 
 
@@ -58,3 +68,8 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Brand, BrandAdmin)
 admin.site.register(Size, SizeAdmin)
 admin.site.register(CartItem, CartItemAdmin)
+admin.site.register(Review, ReviewAdmin)
+admin.site.register(OrderedItem, OrderedItemAdmin)
+admin.site.register(CheckoutDetails, CheckoutDetailsAdmin)
+
+

@@ -15,6 +15,13 @@ urlpatterns = [
     path('product/<int:id>', product_render, name="product"),
     path('wishlist', wishlist_render, name="wishlist"),
     path('logout', logout_render, name="logout"),
+    path('login', login_render, name="login"),
+    path('search', search_render, name="search"),
+    path('add-to-wishlist/<int:id>', add_to_wishlist_render, name="add-to-wishlist"),
+    path('remove-from-wishlist/<int:id>', remove_from_wishlist_render, name="remove-from-wishlist"),
+    path('add-to-cart/<int:id>', add_to_cart_render, name="add-to-cart"),
+    path('login', login_render, name="login"),
+    path('register', register_render, name="register"),
 ]
 
 #ignore for media routing   
