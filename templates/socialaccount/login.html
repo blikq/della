@@ -1,0 +1,89 @@
+
+{% extends "socialaccount/base_entrance.html" %}
+{% load i18n %}
+{% load allauth %}
+
+{% block head_title %}
+    {% trans "Sign In" %}
+{% endblock head_title %}
+
+{% block extra_head %}
+    <style>
+        .social-login-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .social-login-title {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .social-login-description {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .social-login-form {
+            display: flex;
+            justify-content: center;
+        }
+        .social-login-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .social-login-button:hover {
+            background-color: #0056b3;
+        }
+        .social-login-info {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+{% endblock extra_head %}
+
+{% block content %}
+<div class="social-login-container">
+    {% if process == "connect" %}
+        <h1 class="social-login-title">
+            {% blocktrans with provider.name as provider %}Connect with {{ provider }}{% endblocktrans %}
+        </h1>
+        <p class="social-login-description">
+            {% blocktrans with provider.name as provider %}You're about to connect your account with {{ provider }}. This will enhance your login experience.{% endblocktrans %}
+        </p>
+    {% else %}
+        <h1 class="social-login-title">
+            {% blocktrans with provider.name as provider %}Sign In with {{ provider }}{% endblocktrans %}
+        </h1>
+        <p class="social-login-description">
+            {% blocktrans with provider.name as provider %}You're about to sign in using your {{ provider }} account. It's quick and secure!{% endblocktrans %}
+        </p>
+    {% endif %}
+
+    {% element form method="post" no_visible_fields=True class="social-login-form" %}
+        {% slot actions %}
+            {% csrf_token %}
+            {% element button type="submit" class="social-login-button" %}
+                {% trans "Continue" %}
+            {% endelement %}
+        {% endslot %}
+    {% endelement %}
+
+    <div class="social-login-info">
+        <p>{% trans "By continuing, you agree to our Terms of Service and Privacy Policy." %}</p>
+    </div>
+</div>
+{% endblock content %}

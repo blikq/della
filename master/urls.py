@@ -10,6 +10,8 @@ urlpatterns = [
     path('cart', cart_render, name="cart"),
     path('checkout', checkout_render, name="checkout"),
     path('contact', contact_render, name="contact"),
+
+    path('about', about_render, name="about-us"),
     path('faq', faq_render, name="faq"),
     path('dashboard', dashboard_render, name="dashboard"),
     path('product/<int:id>', product_render, name="product"),
@@ -22,6 +24,8 @@ urlpatterns = [
     path('add-to-cart/<int:id>', add_to_cart_render, name="add-to-cart"),
     path('login', login_render, name="login"),
     path('register', register_render, name="register"),
+    path('initiate-payment', initiate_payment, name="initiate-payment"),
+    path('verify-payment/<str:ref>', verify_payment, name="verify-payment"),
 ]
 
 #ignore for media routing   
