@@ -178,7 +178,7 @@ def product_render(request, id):
         product = get_object_or_404(Product, id=id)
     except Http404:
         messages.error(request, "Product not found")
-        return redirect('/all_products')
+        return redirect('/all-products')
 
     if request.method == "POST":
         if not request.user.is_authenticated:
@@ -252,7 +252,7 @@ def category_render(request, name):
         category_obj = Category.objects.get(name=name)
     except Category.DoesNotExist:
         messages.error(request, f"Category '{name}' does not exist")
-        return redirect('/all_products')
+        return redirect('/all-products')
 
     products = Product.objects.filter(category=category_obj)
     load = [
