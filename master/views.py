@@ -178,7 +178,7 @@ def product_render(request, id):
         product = get_object_or_404(Product, id=id)
     except Http404:
         messages.error(request, "Product not found")
-        return redirect('all_products')
+        return redirect('/all_products')
 
     if request.method == "POST":
         if not request.user.is_authenticated:
@@ -252,7 +252,7 @@ def category_render(request, name):
         category_obj = Category.objects.get(name=name)
     except Category.DoesNotExist:
         messages.error(request, f"Category '{name}' does not exist")
-        return redirect('all_products')
+        return redirect('/all_products')
 
     products = Product.objects.filter(category=category_obj)
     load = [
@@ -306,7 +306,7 @@ def cart_render(request):
             messages.success(request, "Item removed from cart")
         except CartItem.DoesNotExist:
             messages.error(request, "Item not found in cart")
-        return redirect("cart")
+        return redirect("/cart")
 
     if request.method == "POST" and request.POST.get("Update Cart") == "Update Cart":
         for cart_item in cart_items:
@@ -318,7 +318,7 @@ def cart_render(request):
                 except ValueError:
                     messages.error(request, f"Invalid quantity for {cart_item.product.name}")
         messages.success(request, "Cart updated successfully")
-        return redirect("cart")
+        return redirect("/cart")
 
     return render(request, 'master/cart.html', {'cart_items': load, 'subtotal': subtotal})
 
