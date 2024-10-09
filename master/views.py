@@ -249,7 +249,9 @@ def product_render(request, id):
 
 def category_render(request, name):
     try:
+
         category_obj = Category.objects.get(name=name)
+
     except Category.DoesNotExist:
         messages.error(request, f"Category '{name}' does not exist")
         return redirect('/all-products')

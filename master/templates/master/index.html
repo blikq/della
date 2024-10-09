@@ -41,14 +41,10 @@
                                                     <div class="menu-title">Categories</div>
                                                     <!-- End .menu-title -->
                                                     <ul>
-                                                        <li><a href="category/men">MEN</a></li>
-                                                        <li><a href="category/women"><span>WOMEN<span
-                                                                        class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="category/wigs">WIGS</a></li>
-                                                        <li><a href="category/glasses">GLASSES</a></li>
-                                                        <li><a href="category/shoes">SHOES</a></li>
-                                                        <li><a href="category/clothes">CLOTHES</a></li>
-                                                        <li><a href="category/hair-products">HAIR PRODUCTS</a></li>
+                                                        <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li> 
+                                                        <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li>
+                                                        <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li> 
+                                                        <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li> 
                                                     </ul>
                                                 </div><!-- End .menu-col -->
                                             </div><!-- End .col-md-6 -->
@@ -82,19 +78,17 @@
                                                             <!-- End .menu-title -->
                                                             <ul>
                                                                 <li><a href="/all-products">ALL</a></li>
-                                                                <li><a href="/category/men">Men</a></li>
-                                                                <li><a href="/category/women">Women</a></li>
-
-                                                                <li><a href="/category/wigs"><span>Wigs<span
-                                                                                class="tip tip-new">discount</span></span></a>
-                                                                </li>
+                                                                <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li> 
+                                                                <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li> 
+                                                                <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li> 
+                                                                <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li> 
                                                             </ul>
 
                                                             <div class="menu-title">Shop with
                                                                 Della</div>
                                                             <!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="category/all-products"><span>Shop with
+                                                                <li><a href="/all-products"><span>Shop with
                                                                             Della<span
                                                                                 class="tip tip-hot">Hot</span></span></a>
                                                                 </li>
@@ -256,38 +250,22 @@
 
                     <div class="col-sm-6 col-lg-4 order-lg-last">
                         <div class="banner banner-display banner-link-anim">
-                            <a href="/category/jewellery">
+                            <a href="/category/wigs and bundles">
                                 <img src="/static/assets/images/demos/demo-12/banners/banner-5.jpg" alt="Banner">
                             </a>
 
                             <div class="banner-content banner-content-center">
-                                <h3 class="banner-title text-white"><a href="/category/jewellery">Jewellery</a></h3>
+                                <h3 class="banner-title text-white"><a href="/category/wigs and bundles">Wigs/Bundles</a></h3>
                                 <!-- End .banner-title -->
-                                <h4 class="banner-subtitle text-white"><a href="#">8 Items</a></h4>
+                                {% comment %} <h4 class="banner-subtitle text-white"><a href="#">8 Items</a></h4> {% endcomment %}
                                 <!-- End .banner-subtitle -->
-                                <a href="/category/jewellery" class="btn btn-outline-white banner-link">Shop Now</a>
+                                <a href="/category/wigs and bundles" class="btn btn-outline-white banner-link">Shop Now</a>
                             </div><!-- End .banner-content -->
                         </div><!-- End .banner -->
                     </div><!-- End .col-sm-6 -->
 
                     <div class="col-lg-4">
                         <div class="row">
-                            <div class="col-sm-6 col-lg-12">
-                                <div class="banner banner-display banner-link-anim">
-                                    <a href="/category/clothing">
-                                        <img src="/static/assets/images/demos/demo-12/banners/banner-6.jpg" alt="Banner">
-                                    </a>
-
-                                    <div class="banner-content banner-content-center">
-                                        <h3 class="banner-title text-white"><a href="/category/clothing">Clothing</a></h3>
-                                        <!-- End .banner-title -->
-                                        <h4 class="banner-subtitle text-white"><a href="#">24 Items</a></h4>
-                                        <!-- End .banner-subtitle -->
-                                        <a href="/category/clothing" class="btn btn-outline-white banner-link">Discover Now</a>
-                                    </div><!-- End .banner-content -->
-                                </div><!-- End .banner -->
-                            </div><!-- End .col-sm-6 -->
-
                             <div class="col-sm-6 col-lg-12">
                                 <div class="banner banner-display banner-link-anim">
                                     <a href="/category/shoes">
@@ -297,9 +275,25 @@
                                     <div class="banner-content banner-content-center">
                                         <h3 class="banner-title text-white"><a href="/category/shoes">Shoes</a></h3>
                                         <!-- End .banner-title -->
-                                        <h4 class="banner-subtitle text-white"><a href="#">6 Items</a></h4>
+                                        {% comment %} <h4 class="banner-subtitle text-white"><a href="#">24 Items</a></h4> {% endcomment %}
                                         <!-- End .banner-subtitle -->
-                                        <a href="/category/shoes" class="btn btn-outline-white banner-link">Shop Now</a>
+                                        <a href="/category/shoes" class="btn btn-outline-white banner-link">Discover Now</a>
+                                    </div><!-- End .banner-content -->
+                                </div><!-- End .banner -->
+                            </div><!-- End .col-sm-6 -->
+
+                            <div class="col-sm-6 col-lg-12">
+                                <div class="banner banner-display banner-link-anim">
+                                    <a href="/category/perfume">
+                                        <img src="/static/assets/images/demos/demo-12/banners/banner-6.jpg" alt="Banner">
+                                    </a>
+
+                                    <div class="banner-content banner-content-center">
+                                        <h3 class="banner-title text-white"><a href="/category/perfume">Perfume</a></h3>
+                                        <!-- End .banner-title -->
+                                        {% comment %} <h4 class="banner-subtitle text-white"><a href="#">6 Items</a></h4> {% endcomment %}
+                                        <!-- End .banner-subtitle -->
+                                        <a href="/category/perfume" class="btn btn-outline-white banner-link">Shop Now</a>
                                     </div><!-- End .banner-content -->
                                 </div><!-- End .banner -->
                             </div><!-- End .col-sm-6 -->
@@ -1120,13 +1114,13 @@
 
 
                         <ul>
-                            <li><a href="/category/men">MEN</a></li>
-                            <li><a href="/category/women"><span>WOMEN<span class="tip tip-new">New</span></span></a></li>
-                            <li><a href="/category/wigs">WIGS</a></li>
-                            <li><a href="/category/glasses">GLASSES</a></li>
-                            <li><a href="/category/shoes">SHOES</a></li>
-                            <li><a href="/category/clothes">CLOTHES</a></li>
-                            <li><a href="/category/hair">HAIR PRODUCTS</a></li>
+                            
+                            <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li>
+
+                            
                         </ul>
                     <li>
              
