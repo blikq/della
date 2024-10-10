@@ -478,9 +478,11 @@ def register_render(request):
     return render(request, 'accounts/register.html')
 
 def login_render(request):
-    if request.method == "POST" and request.POST.get("login-btn") == "LOG IN":
+    if request.method == "POST":
         email = request.POST.get("singin-email")
         password = request.POST.get("singin-password")
+        print(request.POST.get("singin-email"))
+        print(request.POST.get("singin-password"))
         user = authenticate(email=email, password=password)
         if user is not None:
             login(request, user)

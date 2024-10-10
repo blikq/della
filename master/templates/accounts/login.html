@@ -73,7 +73,8 @@
                         <div class="tab-content" id="tab-content-5">
                             <div class="tab-pane fade show active" id="signin" role="tabpanel"
                                 aria-labelledby="signin-tab">
-                                <form action="#">
+                                <form method="post">
+                                    {% csrf_token %}
                                     <div class="form-group">
                                         <label for="singin-email">Email address *</label>
                                         <input type="text" class="form-control" id="singin-email"
