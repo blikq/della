@@ -52,11 +52,13 @@
                                 <ul>
                                     <li><a href="tel:#"><i class="icon-phone"></i>Call: +000 000 000</a></li>
                                     <li><a href="/wishlist"><i class="icon-heart-o"></i>Wishlist
-                                            </a></li>
+                                        </a></li>
                                     <li><a href="/about">About Us</a></li>
                                     <li><a href="/contact">Contact Us</a></li>
                                     {% if request.user.is_authenticated %}
-                                    <li><a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-user"></i>Logout</a></li>
+                                    <li><a href="/logout"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                                class="icon-user"></i>Logout</a></li>
                                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                                         {% csrf_token %}
                                     </form>
@@ -101,10 +103,14 @@
                                                     <div class="menu-title">Categories</div>
                                                     <!-- End .menu-title -->
                                                     <ul>
-                                                        <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li> 
-                                                        <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li> 
-                                                        <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li>
+                                                        <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span
+                                                                        class="tip tip-new">New</span></span></a></li>
+                                                        <li><a href="/category/accessories"><span>ACCESSORIES<span
+                                                                        class="tip tip-new">New</span></span></a></li>
+                                                        <li><a href="/category/shoes"><span>SHOES<span
+                                                                        class="tip tip-new">New</span></span></a></li>
+                                                        <li><a href="/category/perfume"><span>PERFUME<span
+                                                                        class="tip tip-new">New</span></span></a></li>
                                                     </ul>
                                                 </div><!-- End .menu-col -->
                                             </div><!-- End .col-md-6 -->
@@ -138,10 +144,18 @@
                                                             <!-- End .menu-title -->
                                                             <ul>
                                                                 <li><a href="/all-products">ALL</a></li>
-                                                                <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li> 
-                                                        <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li> 
-                                                        <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li>
+                                                                <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span
+                                                                                class="tip tip-new">New</span></span></a>
+                                                                </li>
+                                                                <li><a href="/category/accessories"><span>ACCESSORIES<span
+                                                                                class="tip tip-new">New</span></span></a>
+                                                                </li>
+                                                                <li><a href="/category/shoes"><span>SHOES<span
+                                                                                class="tip tip-new">New</span></span></a>
+                                                                </li>
+                                                                <li><a href="/category/perfume"><span>PERFUME<span
+                                                                                class="tip tip-new">New</span></span></a>
+                                                                </li>
                                                             </ul>
 
                                                             <div class="menu-title">Shop with
@@ -152,7 +166,9 @@
                                                                             Della<span
                                                                                 class="tip tip-hot">Hot</span></span></a>
                                                                 </li>
-                                                                <li><a href="#">Check out Dellas
+                                                                <li><a
+                                                                        href="https://www.instagram.com/dellas_beauty_studio/">Check
+                                                                        out Dellas
                                                                         Instagram</a></li>
                                                             </ul>
                                                         </div><!-- End .col-md-6 -->
@@ -174,7 +190,7 @@
                                                     </div><!-- End .row -->
                                                 </div><!-- End .menu-col -->
                                             </div><!-- End .col-md-8 -->
-                                        
+
 
                                             <!-- might Implement -->
                                             {% comment %}
@@ -219,12 +235,14 @@
                         <div class="header-search header-search-extended header-search-visible">
                             <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
                             <!-- <form action="#" method="get"> -->
-                                <div class="header-search-wrapper">
-                                    <label for="q" class="sr-only">Search</label>
-                                    <input type="search" class="form-control" name="q" id="q"
-                                        placeholder="Search product ..." required>
-                                    <button class="btn btn-primary" type="button" onclick="window.location.href='/search?s=' + document.getElementById('q').value;"><i class="icon-search"></i></button>
-                                </div><!-- End .header-search-wrapper -->
+                            <div class="header-search-wrapper">
+                                <label for="q" class="sr-only">Search</label>
+                                <input type="search" class="form-control" name="q" id="q"
+                                    placeholder="Search product ..." required>
+                                <button class="btn btn-primary" type="button"
+                                    onclick="window.location.href='/search?s=' + document.getElementById('q').value;"><i
+                                        class="icon-search"></i></button>
+                            </div><!-- End .header-search-wrapper -->
                             <!-- </form> -->
                         </div><!-- End .header-search -->
 
@@ -248,7 +266,7 @@
         <!--fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-->
         {% block content %}
         {% endblock %}
- 
+
 
         <footer class="footer footer-dark">
             <div class="icon-boxes-container">
@@ -261,8 +279,8 @@
                                 </span>
 
                                 <div class="icon-box-content">
-                                    <h3 class="icon-box-title">Free Shipping</h3><!-- End .icon-box-title -->
-                                    <p>Orders $50 or more</p>
+                                    <h3 class="icon-box-title">Seamless Orders</h3><!-- End .icon-box-title -->
+
                                 </div><!-- End .icon-box-content -->
                             </div><!-- End .icon-box -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
@@ -316,16 +334,17 @@
                             <div class="widget widget-about">
                                 <img src="/static/assets/images/demos/demo-18/logo.png" class="footer-logo"
                                     alt="Footer Logo" width="82" height="25">
-                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate
-                                    magna eros eu erat. </p>
+                                <p>At Della, we offer quality products at great prices with a seamless shopping
+                                    experience. Enjoy secure payments, fast shipping, and dedicated support. Thank you
+                                    for choosing Della! </p>
 
                                 <div class="social-icons">
                                     <a href="#" class="social-icon" title="Facebook" target="_blank"><i
                                             class="icon-facebook-f"></i></a>
                                     <a href="#" class="social-icon" title="Twitter" target="_blank"><i
                                             class="icon-twitter"></i></a>
-                                    <a href="#" class="social-icon" title="Instagram" target="_blank"><i
-                                            class="icon-instagram"></i></a>
+                                    <a href="https://www.instagram.com/dellas_beauty_studio/" class="social-icon"
+                                        title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
                                     <a href="#" class="social-icon" title="Youtube" target="_blank"><i
                                             class="icon-youtube"></i></a>
                                     <a href="#" class="social-icon" title="Pinterest" target="_blank"><i
@@ -353,15 +372,16 @@
                                 <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
                                 <ul class="widget-list">
-                                    <li><a href="#">Payment Methods</a></li>
-                                    <li><a href="#">Money-back guarantee!</a></li>
-                                    <li><a href="#">Returns</a></li>
-                                    <li><a href="#">Shipping</a></li>
-                                    <li><a href="#">Terms and conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="faq.html">Payment Methods</a></li>
+                                    <li><a href="faq.html">Money-back guarantee!</a></li>
+                                    <li><a href="faq.html">Returns</a></li>
+                                    <li><a href="faq.html">Shipping</a></li>
+                                    <li><a href="faq.html">Privacy Policy</a></li>
                                 </ul><!-- End .widget-list -->
                             </div><!-- End .widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
+
+
 
                         <div class="col-sm-6 col-lg-3">
                             <div class="widget">
@@ -422,13 +442,17 @@
 
 
                         <ul>
-                            <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li> 
-                                                        <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li>
-                                                        <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li> 
-                                                        <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span
+                                            class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/accessories"><span>ACCESSORIES<span
+                                            class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a>
+                            </li>
+                            <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a>
+                            </li>
                         </ul>
                     <li>
-<!-- 
+                        <!-- 
                         <a href="product" class="sf-with-ul">SHOP</a> -->
 
 
@@ -453,7 +477,8 @@
         <div class="social-icons">
             <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
             <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-            <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+            <a href="https://www.instagram.com/dellas_beauty_studio/" class="social-icon" target="_blank"
+                title="Instagram"><i class="icon-instagram"></i></a>
             <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
         </div><!-- End .social-icons -->
     </div><!-- End .mobile-menu-wrapper -->
@@ -503,7 +528,8 @@
                                                 <span>LOG IN</span>
                                                 <i class="icon-long-arrow-right"></i>
                                             </button> -->
-                                            <input type="submit" class="btn btn-outline-primary-2" name="login-btn" value="LOG IN">
+                                            <input type="submit" class="btn btn-outline-primary-2" name="login-btn"
+                                                value="LOG IN">
 
 
                                             <div class="custom-control custom-checkbox">
@@ -651,7 +677,7 @@
             // Add 'active' class to clicked item
             clickedElement.classList.add('active');
         }
-        </script>
+    </script>
 </body>
 
 

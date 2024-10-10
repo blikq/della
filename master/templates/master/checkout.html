@@ -131,7 +131,9 @@
                                     <tbody>
                                         {% for cart_item in cart_items %}
                                         <tr>
-                                            <td><a href="/product/{{cart_item.product.id}}">{{cart_item.product.name}}</a></td>
+                                            <td><a
+                                                    href="/product/{{cart_item.product.id}}">{{cart_item.product.name}}</a>
+                                            </td>
                                             <td>₦ {{cart_item.product.price}}</td>
                                         </tr>
                                         {% endfor %}
@@ -143,7 +145,7 @@
                                         </tr><!-- End .summary-subtotal -->
                                         <tr>
                                             <td>Shipping:</td>
-                                            <td>Free shipping</td>
+                                            <td>Seamless Orders</td>
                                         </tr>
                                         <tr class="summary-total">
                                             <td>Total:</td>
@@ -248,9 +250,10 @@
                                     <p>More options coming soon...</p>
                                 </div><!-- End .accordion -->
 
-                                <input type="submit" value="Place Order" name="placeorder" class="btn btn-outline-primary-2 btn-order btn-block">
-                                
-                                
+                                <input type="submit" value="Place Order" name="placeorder"
+                                    class="btn btn-outline-primary-2 btn-order btn-block">
+
+
                             </div><!-- End .summary -->
                         </aside><!-- End .col-lg-3 -->
                     </div><!-- End .row -->

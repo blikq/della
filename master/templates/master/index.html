@@ -472,17 +472,14 @@
                         {% endcomment %}
                         <div class="col-sm-6 col-lg-12">
                             <div class="widget widget-subscribe"
-                                style="background-image: url(/static/assets/images/demos/demo-18/bg-newsletter.jpg);">
-                                <h2 class="widget-title">Sign up for email <br>& get 25% off </h2>
-                                <!-- End .widget-title -->
-                                <p>Subcribe to get information about products and coupons</p>
-
-                                <form action="#">
-                                    <input type="email" class="form-control" placeholder="Enter your Email Address"
-                                        required>
-
-                                    <input type="submit" class="btn btn-outline-white" value="Subscribe">
-                                </form>
+                                style="background-image: url(/static/assets/images/demos/demo-18/img.jpg);">
+                                <h4 class="banner-subtitle"><a href="#">Della's Studio</a></h4>
+                                        <!-- End .banner-title -->
+                                        <h3 class="banner-title"><a href="#">Enhance your natural beauty <br>with our
+                                                professional makeup services!</a></h3>
+                                        <!-- End .banner-title -->
+                                        <a href="https://api.whatsapp.com/send?phone=2349160002913"
+                                            class="banner-link">Shop Now</a>
 
                             </div><!-- End .widget widget-banner -->
                         </div><!-- End .col-sm-6 col-lg-12 -->
@@ -748,24 +745,25 @@
                                                     }
                                                 }
                                             }'>
-                                
+
                                 {% for shoe in shoes|slice:":4" %}
                                 <div class="product product-7">
                                     <figure class="product-media">
                                         <!-- <span class="product-label label-sale">30% off</span> -->
                                         <a href="/product/{{shoe.id}}">
-                                            <img src="/static/assets/{{shoe.ogimages.0}}"
-                                                alt="Product image" class="product-image">
+                                            <img src="/static/assets/{{shoe.ogimages.0}}" alt="Product image"
+                                                class="product-image">
                                             {% if shoe.ogimages.1 %}
-                                            <img src="/static/assets/{{shoe.ogimages.1}}"
-                                                alt="Product image" class="product-image-hover">
+                                            <img src="/static/assets/{{shoe.ogimages.1}}" alt="Product image"
+                                                class="product-image-hover">
                                             {% endif %}
                                         </a>
 
                                         <div class="product-action-vertical">
-                                            <a href="/add-to-wishlist/{{shoe.id}}" class="btn-product-icon btn-wishlist btn-expandable"><span>add
+                                            <a href="/add-to-wishlist/{{shoe.id}}"
+                                                class="btn-product-icon btn-wishlist btn-expandable"><span>add
                                                     to wishlist</span></a>
-                                            
+
                                         </div><!-- End .product-action-vertical -->
 
                                         <div class="product-action">
@@ -783,7 +781,7 @@
                                         <div class="ratings-container">
                                             <!-- <div class="ratings">
                                                 <div class="ratings-val" style="width: 100%;"></div> -->
-                                                <!-- End .ratings-val -->
+                                            <!-- End .ratings-val -->
                                             <!-- </div>--><!--End .ratings -->
                                         </div><!-- End .rating-container -->
                                     </div><!-- End .product-body -->
@@ -833,21 +831,21 @@
     </div>
 
 
-    <div class="cta bg-image bg-dark pt-6 pb-7" style="background-image: url(/static/assets/images/backgrounds/bg-1.jpg); ">
+    <div class="cta bg-image bg-dark pt-6 pb-7"
+        style="background-image: url(/static/assets/images/backgrounds/bg-1.jpg); ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-md-8 col-lg-6">
                     <div class="cta-text text-center">
-                        <h3 class="cta-title text-white">Morbi in sem quis dui placerat felis.</h3>
+                        <h3 class="cta-title text-white">Shop with Della Today!</h3>
                         <!-- End .cta-title -->
-                        <p class="cta-desc text-light">Morbi in sem quis dui placerat ornare.
-                            Pellentesque
-                            odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras
-                            consequat.
+                        <p class="cta-desc text-light">Discover amazing deals and top-quality products tailored just for
+                            you. From trendy fashion to everyday essentials, we've got it all. Don’t wait—shop now and
+                            enjoy secure payments, fast shipping, and unbeatable prices. Your perfect purchase is just a
+                            click away!
                         </p><!-- End .cta-desc -->
 
-                        <a href="#" class="btn btn-primary btn-rounded"><span>Click Here</span><i
-                                class="icon-long-arrow-right"></i></a>
+
                     </div><!-- End .cta-text -->
                 </div><!-- End .col-sm-10 col-md-8 col-lg-6 -->
             </div><!-- End .row -->
@@ -955,8 +953,8 @@
                             </span>
 
                             <div class="icon-box-content">
-                                <h3 class="icon-box-title">Free Shipping</h3><!-- End .icon-box-title -->
-                                <p>Orders $50 or more</p>
+                                <h3 class="icon-box-title">Seamless Orders</h3><!-- End .icon-box-title -->
+
                             </div><!-- End .icon-box-content -->
                         </div><!-- End .icon-box -->
                     </div><!-- End .col-sm-6 col-lg-3 -->
@@ -1008,18 +1006,19 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-3">
                         <div class="widget widget-about">
-                            <img src="/static/assets/images/demos/demo-18/logo.png" class="footer-logo" alt="Footer Logo"
-                                width="82" height="25">
-                            <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate
-                                magna eros eu erat. </p>
+                            <img src="/static/assets/images/demos/demo-18/logo.png" class="footer-logo"
+                                alt="Footer Logo" width="82" height="25">
+                            <p>At Della, we offer quality products at great prices with a seamless shopping experience.
+                                Enjoy secure payments, fast shipping, and dedicated support. Thank you for choosing
+                                Della! </p>
 
                             <div class="social-icons">
                                 <a href="#" class="social-icon" title="Facebook" target="_blank"><i
                                         class="icon-facebook-f"></i></a>
                                 <a href="#" class="social-icon" title="Twitter" target="_blank"><i
                                         class="icon-twitter"></i></a>
-                                <a href="#" class="social-icon" title="Instagram" target="_blank"><i
-                                        class="icon-instagram"></i></a>
+                                <a href="https://www.instagram.com/dellas_beauty_studio/" class="social-icon"
+                                    title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
                                 <a href="#" class="social-icon" title="Youtube" target="_blank"><i
                                         class="icon-youtube"></i></a>
                                 <a href="#" class="social-icon" title="Pinterest" target="_blank"><i
@@ -1035,7 +1034,7 @@
                             <ul class="widget-list">
                                 <li><a href="about">About Della</a></li>
                                 <li><a href="#">How to shop on Della</a></li>
-                                <li><a href="#">FAQ</a></li>
+                                <li><a href="/faq">FAQ</a></li>
                                 <li><a href="contact">Contact us</a></li>
                                 <li><a href="login">Log in</a></li>
                             </ul><!-- End .widget-list -->
@@ -1047,26 +1046,27 @@
                             <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
                             <ul class="widget-list">
-                                <li><a href="faq">Payment Methods</a></li>
-                                <li><a href="faq">Money-back guarantee!</a></li>
-                                <li><a href="faq">Returns</a></li>
-                                <li><a href="faq">Shipping</a></li>
-                                <li><a href="faq">Terms and conditions</a></li>
-                                <li><a href="faq">Privacy Policy</a></li>
+                                <li><a href="faq.html">Payment Methods</a></li>
+                                <li><a href="faq.html">Money-back guarantee!</a></li>
+                                <li><a href="faq.html">Returns</a></li>
+                                <li><a href="faq.html">Shipping</a></li>
+                                <li><a href="faq.html">Privacy Policy</a></li>
                             </ul><!-- End .widget-list -->
                         </div><!-- End .widget -->
                     </div><!-- End .col-sm-6 col-lg-3 -->
+
+
 
                     <div class="col-sm-6 col-lg-3">
                         <div class="widget">
                             <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
                             <ul class="widget-list">
-
-                                <li><a href="cart">View Cart</a></li>
-                                <li><a href="wishlist">My Wishlist</a></li>
-
-                                <li><a href="faq">Help</a></li>
+                                <li><a href="/login">Sign In</a></li>
+                                <li><a href="/cart">View Cart</a></li>
+                                <li><a href="/wishlist">My Wishlist</a></li>
+                                <li><a href="/dashboard">Track My Order</a></li>
+                                <li><a href="/faq">Help</a></li>
                             </ul><!-- End .widget-list -->
                         </div><!-- End .widget -->
                     </div><!-- End .col-sm-6 col-lg-3 -->
@@ -1079,7 +1079,8 @@
                 <p class="footer-copyright">Copyright © 2024 Della's Studio. All Rights Reserved.</p>
                 <!-- End .footer-copyright -->
                 <figure class="footer-payments">
-                    <img src="/static/assets/images/demos/demo-18/payments.png" alt="Payment methods" width="272" height="20">
+                    <img src="/static/assets/images/demos/demo-18/payments.png" alt="Payment methods" width="272"
+                        height="20">
                 </figure><!-- End .footer-payments -->
             </div><!-- End .container -->
         </div><!-- End .footer-bottom -->
@@ -1098,7 +1099,9 @@
                 <label for="mobile-search" class="sr-only">Search</label>
                 <input type="search" class="form-control" name="mobile-search" id="mobile-search"
                     placeholder="Search in..." required>
-                    <button class="btn btn-primary" type="button" onclick="window.location.href='/search?s=' + document.getElementById('mobile-search').value;"><i class="icon-search"></i></button>
+                <button class="btn btn-primary" type="button"
+                    onclick="window.location.href='/search?s=' + document.getElementById('mobile-search').value;"><i
+                        class="icon-search"></i></button>
             </form>
 
             <nav class="mobile-nav">
@@ -1114,16 +1117,20 @@
 
 
                         <ul>
-                            
-                            <li><a href="/category/accessories"><span>ACCESSORIES<span class="tip tip-new">New</span></span></a></li>
-                            <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span class="tip tip-new">New</span></span></a></li>
-                            <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a></li>
-                            <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a></li>
 
-                            
+                            <li><a href="/category/accessories"><span>ACCESSORIES<span
+                                            class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/wigs and bundles"><span>WIGS/BUNDLES<span
+                                            class="tip tip-new">New</span></span></a></li>
+                            <li><a href="/category/shoes"><span>SHOES<span class="tip tip-new">New</span></span></a>
+                            </li>
+                            <li><a href="/category/perfume"><span>PERFUME<span class="tip tip-new">New</span></span></a>
+                            </li>
+
+
                         </ul>
                     <li>
-             
+
 
 
 
@@ -1147,7 +1154,8 @@
         <div class="social-icons">
             <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
             <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-            <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+            <a href="https://www.instagram.com/dellas_beauty_studio/" class="social-icon" target="_blank"
+                title="Instagram"><i class="icon-instagram"></i></a>
             <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
         </div><!-- End .social-icons -->
     </div><!-- End .mobile-menu-wrapper -->
@@ -1192,8 +1200,9 @@
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
-                                            <input type="submit" class="btn btn-outline-primary-2" name="login-btn" value="LOG IN">
-                                        
+                                            <input type="submit" class="btn btn-outline-primary-2" name="login-btn"
+                                                value="LOG IN">
+
                                             <!-- <button type="submit" class="btn btn-outline-primary-2" >
                                                 <span>LOG IN</span>
                                                 <i class="icon-long-arrow-right"></i>
