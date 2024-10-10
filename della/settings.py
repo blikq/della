@@ -169,4 +169,12 @@ GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI")
 
 LOGIN_URL = '/login'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Configure the email backend for sending verification emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Example with Gmail
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'blikqcoc@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'MUSAalameen2.0*+'  # Your email password
+DEFAULT_FROM_EMAIL = 'blikqcoc@gmail.com'  # The sender's email address
+
