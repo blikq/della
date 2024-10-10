@@ -478,18 +478,23 @@ def register_render(request):
     return render(request, 'accounts/register.html')
 
 def login_render(request):
-    if request.method == "POST":
-        email = request.POST.get("singin-email")
-        password = request.POST.get("singin-password")
-        print(request.POST.get("singin-email"))
-        print(request.POST.get("singin-password"))
-        user = authenticate(email=email, password=password)
-        if user is not None:
-            login(request, user)
-            messages.success(request, "Logged in successfully")
-        else:
-            messages.error(request, "Invalid email or password")
-        return redirect(request.META.get('HTTP_REFERER', '/'))
+
+    if not request.user.is_authenticated:
+        if request.method == "POST":
+            email = request.POST.get("singin-email")
+            password = request.POST.get("singin-password")
+            print(request.POST.get("singin-email"))
+            print(request.POST.get("singin-password"))
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                login(request, user)
+                messages.success(request, "Logged in successfully")
+                return redirect("home")
+            else:
+                messages.error(request, "Invalid email or password")
+            return redirect(request.META.get('HTTP_REFERER', '/'))
+    else:
+        return redirect("home")
     return render(request, 'accounts/login.html')
 
 #######################payment
@@ -620,5 +625,5 @@ def verify_payment(request, ref):
             e.error(f"{request.user.email} Failed to process payment")
             print(request.user.username, " failed to process payment")
         return render(request, "master/success.html", {"ref": ref})
-    return render(request, "master/index.html")
+    return redirect("home")
 

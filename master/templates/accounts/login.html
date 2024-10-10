@@ -35,7 +35,20 @@
     #signin-modal .close {
         display: none;
     }
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+    
+    .alert-error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
 </style>
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -53,6 +66,15 @@
 <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><i class="icon-close"></i></span>
